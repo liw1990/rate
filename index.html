@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Rate 评分</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/jquery-3.3.1.js" ></script>
+		<script>
+			$(function(){
+				function rate(){
+					$(".rate1 ul").eq(1).children("li").remove()
+					$(".rate2 ul").eq(1).children("li").remove()
+					$(".rate3 ul").eq(1).children("li").remove()
+					$(".rate4 ul").eq(1).children("li").remove()
+					var num =$(".input_txt").val()
+					if(num <=5){
+						var len = parseInt(num/1)
+						var half = (num*100)%100 + "%"
+						for( var i = 1; i<=len; i++){
+							$(".rate1 ul").eq(1).append("<li><p><img src='img/star_r.png' \/></p><\/li>")
+							$(".rate2 ul").eq(1).append("<li><p><img src='img/star_r.png' \/></p><\/li>")
+							$(".rate3 ul").eq(1).append("<li><p><img src='img/star_r.png' \/></p><\/li>")
+							$(".rate4 ul").eq(1).append("<li><p><img src='img/star_r.png' \/></p><\/li>")
+						}
+						$(".rate1 ul").eq(1).append("<li><p><img src='img/star_r.png' \/></p><\/li>")
+						$(".rate2 ul").eq(1).append("<li><p><img src='img/star_r.png' \/></p><\/li>")
+						$(".rate1 ul").eq(1).children().last().children().width(half)
+						$(".rate2 ul").eq(1).children().last().children().width(half)
+						//console.log(len,half)
+					}
+				}
+				$(".btn_ok").click(function(){
+					rate()
+				})
+				$(document).keypress(function (e){
+					if(e.keyCode ==13){
+    					rate()
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="rate">
+			<div class="bt">评分</div>
+			<div class="pingfen">
+				<input class="input_txt" placeholder="请输入评分" type="text" />
+				<div class="btn_ok">确定</div>
+			</div>
+			<div class="bt2">无间距百分比</div>
+			<div class="rate_item rate1">
+				<ul>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+				</ul>
+				<ul></ul>
+			</div>
+			<div class="bt2">有间距百分比</div>
+			<div class="rate_item rate2">
+				<ul>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+				</ul>
+				<ul></ul>
+			</div>
+			<div class="bt2">无间距整数</div>
+			<div class="rate_item rate3">
+				<ul>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+				</ul>
+				<ul></ul>
+			</div>
+			<div class="bt2">有间距整数</div>
+			<div class="rate_item rate4">
+				<ul>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+					<li><img src="img/star_g.png" /></li>
+				</ul>
+				<ul></ul>
+			</div>
+
+		</div>
+	</body>
+</html>
